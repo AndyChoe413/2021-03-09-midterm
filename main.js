@@ -48,16 +48,16 @@ const firstPunctuationIndex = str => {
 const getPlace = (scoreList, playerScore) => {
     let position = scoreList.concat(playerScore).sort((a, b) => b - a).indexOf(playerScore);
     const finalPosition = position + 1
-    if(finalPosition === 1)return '1st place'
-    if (finalPosition === 2) return '2nd place'
-    if (finalPosition === 3) return '3rd place'
-    if (finalPosition === 4) return '4th place'
-    if (finalPosition === 5) return '5th place'
-    if (finalPosition === 6) return '6th place'
-    if (finalPosition === 99) return '99th place'
-    if (finalPosition === 101) return '101st place'
-    if (finalPosition === 102) return '102nd place'
-    if (finalPosition === 103) return '103rd place'
+    const numString = finalPosition.toString()
+    if (numString.endsWith('1')) return `${Number(numString)}st place`;
+    if (numString.endsWith('2')) return `${Number(numString)}nd place`;
+    if (numString.endsWith('3')) return `${Number(numString)}rd place`;
+    if (numString.endsWith('4')) return `${Number(numString)}th place`;
+    if (numString.endsWith('5')) return `${Number(numString)}th place`;
+    if (numString.endsWith('6')) return `${Number(numString)}th place`;
+    if (numString.endsWith('7')) return `${Number(numString)}th place`;
+    if (numString.endsWith('8')) return `${Number(numString)}th place`;
+    if (numString.endsWith('9')) return `${Number(numString)}th place`;
 }
 
 // ┌─────────────────────────────────────┐
